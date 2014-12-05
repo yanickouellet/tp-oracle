@@ -4,18 +4,18 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
 import com.deptinfo.tp3.classes.BiMembres;
-
+import com.deptinfo.tp3.classes.MembreUtil;
 @ManagedBean
 @SessionScoped
 public class ConnexionBean {
 	private String login, motPasse;
     private BiMembres membre;
     
-//    @ManagedProperty("#{listeJoueurs}")
-//    private ListeJoueurs listeJoueurs;
-
-//    public void setListeJoueurs(ListeJoueurs listeJoueurs) {
-//        this.listeJoueurs = listeJoueurs;
+//    @ManagedProperty("#{listeMembres}")
+//    private ListeMembres listeMembres;
+//
+//    public void setListeJoueurs(ListeMembres listeMembres) {
+//        this.listeMembres = listeMembres;
 //    }
 
     public BiMembres getMembre() {
@@ -23,7 +23,7 @@ public class ConnexionBean {
     }
 
     public String getLogin() {
-        return login;
+        return "Bonjour";
     }
 
     public void setLogin(String login) {
@@ -37,11 +37,10 @@ public class ConnexionBean {
     public void setMotPasse(String motPasse) {
         this.motPasse = motPasse;
     }
-  
+    
     public String verifierConnexion() {
-        
-    	
-        membre = listeJoueurs.rechercherJoueur(login);
+    	this.login = "sadfdfsa";
+        membre = new MembreUtil().getMembreConnectant(login, motPasse);
         return("mauvais-login");
         
 //        if (membre == null) {

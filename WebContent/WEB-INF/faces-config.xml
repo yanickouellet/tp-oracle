@@ -10,5 +10,10 @@
 		<managed-bean-class>com.deptinfo.tp3.beans.connexionBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>ListeMembres</managed-bean-name>
+		<managed-bean-class>ListeMembre</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
 
 </faces-config>

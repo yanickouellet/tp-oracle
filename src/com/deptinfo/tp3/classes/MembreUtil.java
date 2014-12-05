@@ -46,19 +46,19 @@ public class MembreUtil {
         
     }
     
-    public List<BiMembres> getListeMembres()
+    public BiMembres getMembreConnectant(String login, String motPasse)
     {
-        List<BiMembres> listeMembres = null; 
-        
+        List<BiMembres> listeMembre = null; 
+        BiMembres membre = null;
         try {
-            
             // Liste de tous les livres
-            listeMembres = session.createQuery("from BiMembres").list();
+            // listeMembres = session.createQuery("from BiMembres").list();
             
             // Liste de tous les livres répondant au critère - Query
-            /*Query q = session.createQuery("from BiArticles where isbn = :isbn");
-            q.setString("isbn", "978-2-70964-192-0");
-            listeLivres = q.list();*/
+            Query q = session.createQuery("from BiMembres where login = :login and motpasse = :motpasse");
+            q.setString("login", login);
+            q.setString("motpasse", motPasse);
+            listeMembre = q.list();
             
             // Liste de tous les livres répondant au critère - Criteria
            /* Criteria criteria = session.createCriteria(BiArticles.class);
@@ -69,8 +69,11 @@ public class MembreUtil {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        return listeMembres;
+        if(listeMembre.size()==1)
+        {
+        	membre = listeMembre.get(0);
+        }
+        return membre;
     }
     
 
