@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+>
+<body>
+<div>
+	    <fieldset>
+            <legend>Connexion</legend>
+            <h:form prependId="false">
+                <h:outputLabel for="txtLogin">Login:</h:outputLabel>
+                <h:inputText id="txtLogin" value="#{connexionBean.login}"></h:inputText>
+                <br />
+                <h:outputLabel for="txtMotPasse">Mot de passe:</h:outputLabel>
+                <h:inputSecret id="txtMotPasse" value="#{connexionBean.motPasse}"></h:inputSecret>
+                <br />
+                <h:commandButton value="Connexion" action="#{connexionBean.verifierConnexion}"></h:commandButton>
+                <br />
+                <h:messages globalOnly="true" infoClass="msgInfo"></h:messages>
+            </h:form>
+        </fieldset>
+</div>
+</body>
+</html>

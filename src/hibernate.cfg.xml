@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">qwerty123</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/bibli</property>
+        <property name="hibernate.connection.username">garneau</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+        <property name="hibernate.ejb.persistenceUnitName">tp3</property>
+        <property name="hibernate.search.autoregister_listeners">false</property>
+        <property name="hibernate.validator.apply_to_ddl">false</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        <mapping resource="com/deptinfo/demo/BiProduits.hbm.xml" />
+        <mapping resource="com/deptinfo/demo/BiTypesmembres.hbm.xml" />
+        <mapping resource="com/deptinfo/demo/BiVentesproduits.hbm.xml" />
+        <mapping resource="com/deptinfo/demo/BiAuteurs.hbm.xml" />
+        <mapping resource="com/deptinfo/demo/BiProvinces.hbm.xml" />
+        <mapping resource="com/deptinfo/demo/BiCopiesarticles.hbm.xml" />
+        <mapping resource="com/deptinfo/demo/BiMaisonseditions.hbm.xml" />
+        <mapping resource="com/deptinfo/demo/BiReservation.hbm.xml" />
+        <mapping resource="com/deptinfo/demo/BiCommentaires.hbm.xml" />
+        <mapping resource="com/deptinfo/demo/BiMembres.hbm.xml" />
+        <mapping resource="com/deptinfo/demo/BiVentes.hbm.xml" />
+        <mapping resource="com/deptinfo/demo/BiModespaiements.hbm.xml" />
+        <mapping resource="com/deptinfo/demo/BiTypearticles.hbm.xml" />
+        <mapping resource="com/deptinfo/demo/BiArticles.hbm.xml" />
+        <mapping resource="com/deptinfo/demo/BiEmprunts.hbm.xml" />
+    </session-factory>
+</hibernate-configuration>

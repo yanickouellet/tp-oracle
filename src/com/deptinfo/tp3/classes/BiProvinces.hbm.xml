@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-12-02 13:16:42 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.deptinfo.demo.BiProvinces" table="bi_provinces" catalog="bibli" optimistic-lock="version">
+        <id name="provCode" type="string">
+            <column name="ProvCode" length="2" />
+            <generator class="assigned" />
+        </id>
+        <property name="provDescFr" type="string">
+            <column name="ProvDescFr" length="50" not-null="true" />
+        </property>
+        <property name="provDescEn" type="string">
+            <column name="ProvDescEn" length="50" not-null="true" />
+        </property>
+        <property name="pcTaxeProv" type="big_decimal">
+            <column name="PcTaxeProv" precision="3" scale="3" not-null="true" />
+        </property>
+        <property name="pcTaxeFed" type="big_decimal">
+            <column name="PcTaxeFed" precision="3" scale="3" not-null="true" />
+        </property>
+        <set name="biMaisonseditionses" table="bi_maisonseditions" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ProvCode" length="2" not-null="true" />
+            </key>
+            <one-to-many class="com.deptinfo.demo.BiMaisonseditions" />
+        </set>
+    </class>
+</hibernate-mapping>
